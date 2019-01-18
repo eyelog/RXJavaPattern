@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -39,17 +40,25 @@ public class MainActivity extends AppCompatActivity {
         reactEngine = new ReactEngine();
 
         btClassic.setOnClickListener((v) -> {
-            steps = Integer.parseInt(etSteps.getText().toString());
-            length = Integer.parseInt(etLength.getText().toString());
-            stringList = loopEngine.getStringList(steps, length);
-            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stringList));
+            if(etSteps.getText().toString().equals("")||etLength.getText().toString().equals("")){
+                Toast.makeText(this, "Not all fields filled", Toast.LENGTH_SHORT).show();
+            }else {
+                steps = Integer.parseInt(etSteps.getText().toString());
+                length = Integer.parseInt(etLength.getText().toString());
+                stringList = loopEngine.getStringList(steps, length);
+                listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stringList));
+            }
         });
 
         btReact.setOnClickListener((v) -> {
-            steps = Integer.parseInt(etSteps.getText().toString());
-            length = Integer.parseInt(etLength.getText().toString());
-            stringList = reactEngine.getStringList(steps, length);
-            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stringList));
+            if(etSteps.getText().toString().equals("")||etLength.getText().toString().equals("")){
+                Toast.makeText(this, "Not all fields filled", Toast.LENGTH_SHORT).show();
+            }else {
+                steps = Integer.parseInt(etSteps.getText().toString());
+                length = Integer.parseInt(etLength.getText().toString());
+                stringList = reactEngine.getStringList(steps, length);
+                listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stringList));
+            }
         });
 
     }
