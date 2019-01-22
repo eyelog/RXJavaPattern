@@ -1,4 +1,4 @@
-package ru.eyelog.rxjavapattern;
+package ru.eyelog.rxjavapattern.arrange;
 
 public class BlackSmith {
 

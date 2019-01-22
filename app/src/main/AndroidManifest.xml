@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".arrange.ActivityArrange"/>
+        <activity android:name=".just.ActivityJust"/>
+        <activity android:name=".array_from.ActivityArrayFrom"/>
+        <activity android:name=".function_map.ActivityFunctionMap"/>
     </application>
 
 </manifest>

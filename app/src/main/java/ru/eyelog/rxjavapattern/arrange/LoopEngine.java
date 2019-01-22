@@ -1,4 +1,4 @@
-package ru.eyelog.rxjavapattern;
+package ru.eyelog.rxjavapattern.arrange;
 
 import java.util.ArrayList;
 import java.util.List;
